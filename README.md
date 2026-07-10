@@ -1,4 +1,6 @@
-# shijing · 诗经创作 Skill
+# shijing · 诗经创作 Skill（跨 Agent 通用）
+
+> 版本：v2 · 跨 Agent 通用 —— 适用于 **WorkBuddy / Claude Code / Codex / OpenClaw** 及任何能读取 Markdown 指令的 Agent。
 
 教 AI 写《诗经》体诗歌的 Skill。《诗经》是中国先秦四言诗的传统文体——以**赋比兴**为笔法,以**重章叠句**为节奏,以草木鸟兽起兴,朴野天然,一唱三叹。本 Skill 从《诗经》风雅颂与名篇(关雎、蒹葭、桃夭、鹿鸣、采薇等)提炼而成,支持多类题材:
 
@@ -8,12 +10,18 @@
 
 只要意图是"朴野天然、一唱三叹的古风四言诗",即使不提"诗经"二字也会触发。
 
-## 安装
+## 跨 Agent 安装
 
-将本目录(`shijing/`)整个复制到:
+本技能是**平台无关的**:核心指令在 `AGENTS.md`(与 WorkBuddy 的 `SKILL.md` 内容完全等价,仅去掉了平台专属 frontmatter)。各 Agent 只需把对应入口文件放进它能读取的位置:
 
-- `~/.workbuddy/skills/` —— 全局可用(任何项目都能触发)
-- `<项目>/.workbuddy/skills/` —— 仅该项目可用
+| Agent | 入口文件 | 放置位置 |
+|-------|----------|----------|
+| **WorkBuddy** | `SKILL.md` | `~/.workbuddy/skills/shijing/` 或 `<项目>/.workbuddy/skills/shijing/` |
+| **Claude Code** | `CLAUDE.md` | 项目根目录(Claude Code 自动读取);或 `~/.claude/CLAUDE.md` 全局生效 |
+| **Codex** | `AGENTS.md` | 项目根目录(Codex 自动读取 `AGENTS.md`) |
+| **OpenClaw / 其他** | `AGENTS.md` | 作为系统提示词,或放入 Agent 可读取的指令目录 |
+
+> 通用做法:把整个 `shijing/` 目录复制进项目根目录,大部分 Agent 会自动识别 `AGENTS.md` / `CLAUDE.md`。`references/`、`evals/`、`examples.md` 为按需加载的素材,建议一并保留。
 
 ## 使用
 
@@ -52,8 +60,10 @@
 
 ```
 shijing/
-├── SKILL.md                   # 第一层:骨架 + 武器库 + 套语速查(触发即加载)
-├── README.md                  # 本文件(给人看的;AI 只读 SKILL.md)
+├── AGENTS.md                  # 跨 Agent 通用指令(规范源,与 SKILL.md 等价)
+├── CLAUDE.md                  # Claude Code 入口(完整指令)
+├── SKILL.md                   # WorkBuddy 入口(含 YAML frontmatter)
+├── README.md                  # 本文件(给人看的;AI 只读 AGENTS.md / SKILL.md)
 ├── evals/evals.json           # 测试用例(思念/贺婚/咏物/现代戏仿)
 └── references/
     ├── 逐篇精读.md             # 五篇结构映射 + 每篇"最值得偷师的三招"
