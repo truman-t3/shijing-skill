@@ -84,6 +84,15 @@ shijing/
 - **新增底本**:向 `references/originals/` 添加新篇目(附元信息头:篇目、类别、年代、对象、风格标签、名句、学习要点),在精讲笔记中提炼其独有招数,并更新 `SKILL.md` 的查阅索引表。
 - **验证**: `evals/evals.json` 预置了四条测试用例,可用 skill-creator 的评测流程跑带/不带 Skill 的对照实验。
 
+## 规范源与同步
+
+- **`AGENTS.md` 是唯一规范源(canonical)**。WorkBuddy 的 `SKILL.md` 与 Claude Code 的 `CLAUDE.md` 都是由它生成的**适配器**,内容完全等价,只是分别套了平台专属的 YAML frontmatter / 入口说明。
+- 修改指令时,**只改 `AGENTS.md`**,然后运行仓库内的 `sync.py` 重新生成另外两个文件,避免三份内容漂移:
+  ```bash
+  python sync.py
+  ```
+- `sync.py` 会从 `AGENTS.md` 抽取正文(自 `# 诗经创作` 标题起),自动补回 `SKILL.md` 的 frontmatter 与 `CLAUDE.md` 的入口说明。
+
 ## 许可
 
-本 Skill 为教学用途。所含《诗经》原典原文属公有领域;原创示范与解析归本仓库。
+本仓库采用 [MIT License](LICENSE)。《诗经》原典原文属公有领域;原创示范、解析与技能结构归本仓库作者所有,可自由用于任何 Agent 或项目,请保留出处。

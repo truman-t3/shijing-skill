@@ -2,7 +2,6 @@
 name: shijing
 description: 创作《诗经》体诗歌——中国先秦四言诗的传统文体。当用户要"写诗经""仿写诗经""写四言诗""用诗经体/国风体""给某人/某事/某节日写首古风诗经",或给出《××》《拟××》式古风标题、言及"赋比兴""重章叠句""风雅颂"时,务必使用本技能;贺婚祝寿、思念送别、咏物感怀、宴饮赠答、祭典颂德皆适用。用户只要想要"朴野天然、一唱三叹的古风四言诗",即使没提"诗经"二字也应触发。Use this skill for original Shijing-style (Classic of Poetry) four-character verse, including guofeng/feng-ya-song compositions with 赋比兴, 重章叠句, reduplicatives, and rhyme.
 ---
-
 # 诗经创作
 
 《诗经》是"古诗之祖":四言为主,以**赋比兴**为笔法,以**重章叠句**为节奏,以草木鸟兽起兴,朴野天然,一唱三叹。气势不在华丽堆砌,而在**形制与语感的到位**。

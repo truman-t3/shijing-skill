@@ -1,7 +1,6 @@
 # 诗经创作（Claude Code 入口）
 
-> Claude Code 会读取本文件（`CLAUDE.md`）。其完整指令与 `AGENTS.md` 等价；若你的环境不自动加载 `AGENTS.md`，可直接阅读本文件（已含完整内容）。
-
+> Claude Code 会读取本文件（CLAUDE.md）。完整指令与 AGENTS.md 等价；若你的环境不自动加载 AGENTS.md，可直接阅读本文件（已含完整内容）。
 
 # 诗经创作
 
