@@ -1,0 +1,56 @@
+{
+  "skill": "shijing",
+  "description": "诗经体创作技能的测试用例。每条用例给出用户输入与合格判据,用于带/不带 skill 的对照评测(可配合 skill-creator 评测流程)。",
+  "cases": [
+    {
+      "id": "ev-01",
+      "name": "思念远人(国风)",
+      "input": "用诗经体写一首思念远方友人的诗",
+      "expect": {
+        "category": "国风",
+        "stanza_count": 3,
+        "four_char_based": true,
+        "reduplicative": true,
+        "end_rhyme": true,
+        "xing_opening": true,
+        "with_gloss_and_translation": true
+      }
+    },
+    {
+      "id": "ev-02",
+      "name": "贺婚(风·短章)",
+      "input": "帮我写首诗经风格的诗,祝贺朋友新婚",
+      "expect": {
+        "category": "风或颂",
+        "auspicious_tone": true,
+        "reduplicative": true,
+        "stanza_repetition": true,
+        "with_gloss_and_translation": true
+      }
+    },
+    {
+      "id": "ev-03",
+      "name": "咏物明志(雅/颂)",
+      "input": "以松柏为意象,用诗经体写一首赞美坚贞品格的诗",
+      "expect": {
+        "bi_xing_present": true,
+        "four_char_based": true,
+        "end_rhyme": true,
+        "not_copy_original": true,
+        "with_gloss_and_translation": true
+      }
+    },
+    {
+      "id": "ev-04",
+      "name": "现代题材古法包装(国风戏仿)",
+      "input": "用诗经体写一首吐槽熬夜写代码的诗,要古雅但对象是现代的",
+      "expect": {
+        "four_char_based": true,
+        "no_modern_colloquial_leak": true,
+        "stanza_repetition": true,
+        "humor_via_contrast": true,
+        "with_gloss_and_translation": true
+      }
+    }
+  ]
+}
