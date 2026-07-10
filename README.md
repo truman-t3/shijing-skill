@@ -10,6 +10,51 @@
 
 只要意图是"朴野天然、一唱三叹的古风四言诗",即使不提"诗经"二字也会触发。
 
+## 快速安装
+
+本技能是纯 Markdown 指令包,无需编译,**复制即装**。三种方式任选其一:
+
+### 方式一:发一段提示词,让 Agent 自己装(最省事)
+
+把下面这段直接发给你正在用的 Agent(Claude Code / Codex / Cursor / OpenClaw / WorkBuddy 等皆可):
+
+```
+请帮我安装「诗经创作」skill:从 https://github.com/truman-t3/shijing-skill 拉取最新文件,
+把 AGENTS.md(或对应你平台的入口文件:Claude Code 用 CLAUDE.md、WorkBuddy 用 SKILL.md)
+放到我的技能/指令目录,并确认之后按它的规范创作诗经体诗歌。
+```
+
+Agent 会自动把它放进正确位置(Claude Code → 项目根 `CLAUDE.md`;Codex → `AGENTS.md`;WorkBuddy → `~/.workbuddy/skills/shijing/`;Cursor → `~/.cursor/skills/shijing/`)。
+
+### 方式二:git clone 复制即装
+
+```bash
+git clone https://github.com/truman-t3/shijing-skill.git
+# Claude Code / Cursor(全局)
+cp -r shijing-skill ~/.claude/skills/shijing      # 或 ~/.cursor/skills/shijing
+# WorkBuddy(全局)
+cp -r shijing-skill ~/.workbuddy/skills/shijing
+# 仅当前项目:把 AGENTS.md / CLAUDE.md 放到项目根目录即可
+```
+
+### 方式三:一行 curl 取入口文件
+
+```bash
+# Claude Code
+curl -fsSL https://raw.githubusercontent.com/truman-t3/shijing-skill/master/CLAUDE.md -o CLAUDE.md
+# Codex / 通用 Agent
+curl -fsSL https://raw.githubusercontent.com/truman-t3/shijing-skill/master/AGENTS.md -o AGENTS.md
+# WorkBuddy(需含 frontmatter 的 SKILL.md)
+curl -fsSL https://raw.githubusercontent.com/truman-t3/shijing-skill/master/SKILL.md -o ~/.workbuddy/skills/shijing/SKILL.md
+```
+
+> Windows(PowerShell)用 `irm` 等价命令:
+> ```powershell
+> irm https://raw.githubusercontent.com/truman-t3/shijing-skill/master/CLAUDE.md -OutFile CLAUDE.md
+> ```
+
+装好后直接对 Agent 说「用诗经体写一首……」即可触发。
+
 ## 跨 Agent 安装
 
 本技能是**平台无关的**:核心指令在 `AGENTS.md`(与 WorkBuddy 的 `SKILL.md` 内容完全等价,仅去掉了平台专属 frontmatter)。各 Agent 只需把对应入口文件放进它能读取的位置:
