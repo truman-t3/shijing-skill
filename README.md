@@ -12,7 +12,7 @@
 
 ## 快速安装
 
-本技能是纯 Markdown 指令包,无需编译,**复制即装**。三种方式任选其一:
+本技能是纯 Markdown 指令包,无需编译,**复制即装**。四种方式任选其一(另有独立的 [`install-prompt.md`](install-prompt.md) 可直接复制整段提示词):
 
 ### 方式一:发一段提示词,让 Agent 自己装(最省事)
 
@@ -52,6 +52,20 @@ curl -fsSL https://raw.githubusercontent.com/truman-t3/shijing-skill/master/SKIL
 > ```powershell
 > irm https://raw.githubusercontent.com/truman-t3/shijing-skill/master/CLAUDE.md -OutFile CLAUDE.md
 > ```
+
+### 方式四:一键脚本(自动识别平台)
+
+直接让本机跑脚本,自动识别你装了哪个 Agent 并复制进去:
+
+```bash
+# macOS / Linux / Git Bash
+curl -fsSL https://raw.githubusercontent.com/truman-t3/shijing-skill/master/install.sh | bash
+
+# Windows (PowerShell)
+irm https://raw.githubusercontent.com/truman-t3/shijing-skill/master/install.sh | iex
+```
+
+指定平台:`bash install.sh -p claude`(可选 `claude` / `cursor` / `workbuddy` / `codex`)。脚本源码见 [`install.sh`](install.sh),纯 bash、无外部依赖。
 
 装好后直接对 Agent 说「用诗经体写一首……」即可触发。
 
