@@ -1,6 +1,6 @@
 # shijing · 诗经创作 Skill（跨 Agent 通用）
 
-> 版本：v2 · 跨 Agent 通用 —— 适用于 **WorkBuddy / Claude Code / Codex / OpenClaw** 及任何能读取 Markdown 指令的 Agent。
+> 版本：**v1.0.0** · 跨 Agent 通用 —— 适用于 **WorkBuddy / Claude Code / Codex / OpenClaw** 及任何能读取 Markdown 指令的 Agent。
 
 教 AI 写《诗经》体诗歌的 Skill。《诗经》是中国先秦四言诗的传统文体——以**赋比兴**为笔法,以**重章叠句**为节奏,以草木鸟兽起兴,朴野天然,一唱三叹。本 Skill 从《诗经》风雅颂与名篇(关雎、蒹葭、桃夭、鹿鸣、采薇等)提炼而成,支持多类题材:
 
